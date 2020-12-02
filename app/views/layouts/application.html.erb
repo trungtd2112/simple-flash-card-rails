@@ -21,7 +21,7 @@
           </ul>
           <div class=" my-2 my-lg-0">
             <% if user_signed_in? %>
-            <p>こんにちわ, <%= current_user.email %></p>
+            <p>こんにちわ, <%= current_user.name %></p>
             <%= link_to "Logout", destroy_user_session_path, method: :delete %>
             <% else %>
             <%= link_to "Sign in", new_user_session_path %>

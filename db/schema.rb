@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_104447) do
+ActiveRecord::Schema.define(version: 2020_12_02_123635) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -32,10 +32,25 @@ ActiveRecord::Schema.define(version: 2020_12_02_104447) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
-
+  
+  create_table "cards_reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "cards_id"
+    t.text "review"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
   create_table "cards", force: :cascade do |t|
     t.string "front_side"
     t.string "back_side"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cards_reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "cards_id"
+    t.text "review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -20,6 +20,18 @@
   </div>
 </div>
   </div>
+  <div>
+  <h2>Review From</h2>
+ <%= form_with(model: @cards_review, local: true) do |form| %>
+   <div class= "field">
+     <%= form.text_area :review %>
+     <%= form.hidden_field :card_id, :value => @card.id %>
+   </div>
+   <div class="actions">
+     <%= form.submit %>
+   </div>
+ <% end %>
+ </div>
 </div>
 <br></br>
 <div class="row text-white">

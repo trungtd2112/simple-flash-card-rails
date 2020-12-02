@@ -10,6 +10,7 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.json
   def show
+    @cards_review = CardsReview.new
   end
 
   # GET /cards/new

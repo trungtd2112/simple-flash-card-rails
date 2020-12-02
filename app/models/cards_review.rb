@@ -1,0 +1,2 @@
+class CardsReview < ApplicationRecord
+end
