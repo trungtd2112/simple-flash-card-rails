@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :card_reviews
   resources :groups
   get 'users/show'
   root 'static_pages#home'

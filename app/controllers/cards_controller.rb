@@ -10,6 +10,7 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.json
   def show
+    @card_review = CardReview.new
   end
 
   # GET /cards/new
@@ -27,6 +28,7 @@ class CardsController < ApplicationController
   # POST /cards.json
   def create
     @card = Card.new(card_params)
+    @card_review.user_id = current_user.id
     @card.group_id = params[:group_id]
     @card.user_id = current_user.id
     respond_to do |format|
@@ -74,6 +76,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:front_side, :back_side, :group_id, :user_id, :picture)
+      params.require(:card).permit(:front_side, :back_side, :group_id, :user_id, :picture, :review)
     end
 end

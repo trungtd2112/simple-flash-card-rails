@@ -34,6 +34,23 @@
   </div>
   </div>
 </div>
+<h2>Review From</h2>
+ <%= form_with(model: @card_review, local: true) do |form| %>
+   <div class= "field">
+     <%= form.text_area :review %>
+     <%= form.hidden_field :card_id, :value => @card.id %>
+   </div>
+   <div class="actions">
+     <%= form.submit %>
+   </div>
+ <% end %>
+ <h2>Review List</h2>
+     <ul>
+       <% @card.card_review.each do |card_review|%>
+        <li><%= card_review.review %>
+          (<i><%= card_review.user.name %></i>)</li>
+     <% end %>
+     </ul>
 <br></br>
 <div class="row text-white">
   <div class="col-md-6 text-light">

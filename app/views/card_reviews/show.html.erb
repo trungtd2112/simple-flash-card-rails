@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @card_review.user.name %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @card_review.card.front_side %> - <%= @card_review.card.back_side %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @card_review.review %>
+</p>
+
+<%= link_to 'Edit', edit_card_review_path(@card_review) %> |
+<%= link_to 'Back', card_reviews_path %>
