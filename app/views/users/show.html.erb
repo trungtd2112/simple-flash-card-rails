@@ -1,14 +1,24 @@
-<h1>Profile</h1>
-<p>
-  <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar %>
-  <% end %>
-</p>
-<h3>Name</h3>
-<%= @user.name %>
-<h3>Age</h3>
-<%= @user.age %>
-<h3>Email</h3>
-<%= @user.email %>
-<hr>
-<%= link_to "Back", :back %>
+<h1 class ="text-center bg-white font-italic">Profile</h1>
+
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card text-center" style="width: 18rem;">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, style:"width:287px" %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.name %></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= @user.age %>歳</li>
+        <li class="list-group-item">Eメール：<%= @user.email %></li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+      </div>
+    </div>
+  </div>
+</div>
+
