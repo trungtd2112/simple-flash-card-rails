@@ -1,24 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="card">
+  <div class="card-header">
+    <%= @card.user.name %>
+    <%= @card.group.name %>
+    <%= image_tag(@card.picture) %>
+  </div>
+</div>
 <div class="row text-center">
   <div class="col-md-6">
     <div class="card">
-  <div class="card-header">
-    Front side
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= @card.front_side %></h5>
-  </div>
-</div>
+      <div class="card-header">
+        <strong>言葉</strong>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @card.front_side %></h5>
+      </div>
+    </div>
   </div>
   <div class="col-md-6">
     <div class="card">
-  <div class="card-header">
-    Back side
-  </div>
-  <div class="card-body">
+      <div class="card-header">
+        <strong>意味</strong>
+      </div>
+    <div class="card-body">
     <h5 class="card-title"><%= @card.back_side %></h5>
+    </div>
   </div>
-</div>
   </div>
 </div>
 <br></br>

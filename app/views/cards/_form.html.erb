@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :front_side, class:"text-blod" %>
+    <%= form.label "意味", class:"text-blod" %>
     <%= form.text_field :front_side, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :back_side %>
+    <%= form.label "言葉"%>
     <%= form.text_field :back_side, class:"form-control" %>
   </div>
   
   <div class="field">
-    <%= form.label :group_id %>
-    <%= select_tag :group_id, options_for_select(@group_name), prompt: "Select Set", class: 'form-control select2' %>
+    <%= form.label "イラストの画像", class:"text-blod" %>
+    <%= form.file_field :picture, class:"form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= form.label "セット" %>
+    <%= select_tag :group_id, options_for_select(@group.collect{ |g| [g.name, g.id] }), prompt: "Select Set", class: 'form-control' %>
   </div>
   
 

@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
+<div class="card text-center">
+  <div class="card-header">
+    Creater: <%= @group.user.name %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><strong><%= @group.name %></strong></h5>
+  </div>
+  <div class="card-footer text-muted">
+    Created at <%= @group.created_at %>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
 
 <table class="table table-striped" style="margin-left: 0px">
   <thead class="thead-dark">
@@ -36,12 +39,6 @@
     <% end %>
   </tbody>
 </table>
-
-
-
-
-
-
 
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
