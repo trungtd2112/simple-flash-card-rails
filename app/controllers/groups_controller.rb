@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
-    @group = current_user.groups.build
+    @group = Group.new
   end
 
   # GET /groups/1/edit
@@ -26,7 +26,8 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    @group = current_user.groups.build(group_params)
+    @group = Group.new(group_params)
+    @group.user_id = current_user.id
 
     respond_to do |format|
       if @group.save

@@ -16,11 +16,13 @@ class CardsController < ApplicationController
   def new
     @card = Card.new
     @group = Group.all.map{ |grp| [grp.id] }
+    @group_name = Group.all.map{ |grp| [grp.name] }
   end
 
   # GET /cards/1/edit
   def edit
     @group = Group.all.map{ |grp| [grp.id] }
+    @group_name = Group.all.map{ |grp| [grp.name] }
   end
 
   # POST /cards
