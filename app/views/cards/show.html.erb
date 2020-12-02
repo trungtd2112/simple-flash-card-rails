@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
-<div class="card">
-  <div class="card-header">
-    <%= @card.user.name %>
-    <%= @card.group.name %>
-    <%= image_tag(@card.picture) %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <% if @card.picture.attached? %>
+        <%= image_tag @card.picture, style:"height: 350px" %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= @card.group.name %></h5>
+        <p class="card-text">By <%= @card.user.name %> at <%= @card.created_at %></p>
+      </div>
+    </div>
   </div>
 </div>
 <div class="row text-center">

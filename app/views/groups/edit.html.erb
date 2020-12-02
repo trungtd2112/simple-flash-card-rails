@@ -1,6 +1,12 @@
-<h1>Editing Group</h1>
+<h1 class ="text-center bg-white font-italic">Editing Group</h1>
 
 <%= render 'form', group: @group %>
 
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
+<div class="row text-white">
+  <div class="col-md-6 text-light">
+    <%= link_to 'Show', @group, class:"btn btn-sm btn-outline-secondary btn-block" %>
+  </div>
+  <div class="col-md-6">
+    <%= link_to 'Back', groups_path, class:"btn btn-sm btn-outline-secondary btn-block" %>
+  </div>
+</div>

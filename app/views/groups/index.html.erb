@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'New Group', new_group_path, class:"text-right btn btn-outline-success btn-sm text-dark"%>
+<h1 class ="text-center bg-white font-italic">
+  Groups
+</h1>
 
-<h1>Groups</h1>
-
-<table>
+<table class="table table-striped" style="margin-left: 0px">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>メーカー</th>
+      <th>セットの名前</th>
+      <th class="text-center" colspan="3">操作</th>
     </tr>
   </thead>
 
@@ -16,14 +18,12 @@
       <tr>
         <td><%= group.user.name %></td>
         <td><%= group.name %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', group, class:"btn btn-sm btn-outline-primary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_group_path(group), class:"btn btn-sm btn-outline-warning btn-sm" %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Group', new_group_path %>
