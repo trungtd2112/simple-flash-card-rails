@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class ="text-center bg-light">Cards</h1>
+
+<table style="margin-left: 50px">
+  <thead>
+    <tr>
+      <th class ="text-center">言葉</th>
+      <th class ="text-center" colspan="4">操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td>
+          <div class="card">
+            <div id="show-back-<%= card.id %>" class="card-body text-primary">
+              <%= card.front_side %>
+            </div>
+          </div>
+        </td>
+        <td><%= link_to 'Detail', card, class:"btn btn-primary btn-sm" %></td>
+        <td><button onclick="myFunction(<%= card.id %>, '<%= card.back_side %>', '<%= card.front_side %>')" type="button" class="btn btn-primary btn-sm">Quick view</button><td>
+        <td><%= link_to 'Edit', edit_card_path(card), class:"btn btn-warning btn-sm" %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, class:"btn btn-danger btn-sm", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card', new_card_path %>
+
+
+<script>
+
+function myFunction(id, mean, term) {
+  console.log(mean);
+  var element = document.getElementById("show-back-"+id);
+  if($(element).hasClass( "text-primary" ) == true)
+  {
+    $(element).removeClass("text-primary");
+    $(element).addClass("text-success");
+    $(element).text(mean);
+  }else{
+    $(element).addClass("text-primary");
+    $(element).removeClass("text-success");
+    $(element).text(term);
+  }
+}
+</script>
+
+
