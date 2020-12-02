@@ -1,14 +1,34 @@
 <p id="notice"><%= notice %></p>
+<div class="row text-center">
+  <div class="col-md-6">
+    <div class="card">
+  <div class="card-header">
+    Front side
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @card.front_side %></h5>
+  </div>
+</div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+  <div class="card-header">
+    Back side
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @card.back_side %></h5>
+  </div>
+</div>
+  </div>
+</div>
+<br></br>
+<div class="row text-white">
+  <div class="col-md-6 text-light">
+    <%= link_to 'Edit', edit_card_path(@card), class:"btn btn-sm btn-outline-secondary btn-block" %>
+  </div>
+  <div class="col-md-6">
+    <%= link_to 'Back', cards_path, class:"btn btn-sm btn-outline-secondary btn-block" %>
+  </div>
+</div>
 
-<p>
-  <strong>Front side:</strong>
-  <%= @card.front_side %>
-</p>
 
-<p>
-  <strong>Back side:</strong>
-  <%= @card.back_side %>
-</p>
-
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>

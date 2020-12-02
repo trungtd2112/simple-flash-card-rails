@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :front_side %>
-    <%= form.text_field :front_side %>
+    <%= form.label :front_side, class:"text-blod" %>
+    <%= form.text_field :front_side, class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :back_side %>
-    <%= form.text_field :back_side %>
+    <%= form.text_field :back_side, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <p class="btn btn-secondary btn-block"><%= form.submit %></p>
   </div>
 <% end %>
