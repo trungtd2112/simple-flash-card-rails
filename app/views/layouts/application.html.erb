@@ -11,10 +11,14 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+    <% if user_signed_in? %>
+    <p>こんにちわ, <%= current_user.email %></p>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %>
+    <% end %>
+    <hr>
           <%= yield %>
         </div>
       </div>
