@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group_review.user_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @group_review.group_id %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @group_review.review %>
+</p>
+
+<%= link_to 'Edit', edit_group_review_path(@group_review) %> |
+<%= link_to 'Back', group_reviews_path %>

@@ -40,6 +40,24 @@
   </tbody>
 </table>
 
+<h4>Review From</h2>
+ <%= form_with(model: @group_review, local: true) do |form| %>
+   <div class= "field">
+     <%= form.text_area :review %>
+     <%= form.hidden_field :group_id, :value => @group.id %>
+   </div>
+   <div class="actions">
+     <%= form.submit %>
+   </div>
+ <% end %>
+ <h2>Review List</h2>
+     <ul>
+       <% @group.group_review.each do |group_review|%>
+        <li><%= group_review.review %>
+          (<i><%= group_review.user.name %></i>)</li>
+     <% end %>
+     </ul>
+
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

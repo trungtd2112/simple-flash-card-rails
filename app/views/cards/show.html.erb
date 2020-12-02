@@ -34,23 +34,31 @@
   </div>
   </div>
 </div>
-<h2>Review From</h2>
+<h3 class ="text-center bg-white font-italic">このカード、どう？</h3>
  <%= form_with(model: @card_review, local: true) do |form| %>
    <div class= "field">
-     <%= form.text_area :review %>
+     <%= form.text_area :review, class:"form-control" %>
      <%= form.hidden_field :card_id, :value => @card.id %>
    </div>
    <div class="actions">
-     <%= form.submit %>
+     <p class="btn btn-secondary btn-sm"><%= form.submit %></p>
    </div>
  <% end %>
- <h2>Review List</h2>
-     <ul>
-       <% @card.card_review.each do |card_review|%>
-        <li><%= card_review.review %>
-          (<i><%= card_review.user.name %></i>)</li>
-     <% end %>
-     </ul>
+ <h4 class ="text-center bg-white font-italic">読者 コーナー</h4>
+  <% @card.card_review.each do |card_review|%>
+    <div class="media">
+      <% if card_review.user.avatar.attached? %>
+        <%= image_tag card_review.user.avatar, class:"align-self-start mr-3", style:"width:64px; height:64px"%>
+      <% end %>
+      <div class="media-body">
+        <h5 class="mt-0"><%= card_review.user.name %></h5>
+        <p><%= card_review.review %></p>
+      </div>
+    </div>
+  <% end %>
+  
+  
+  
 <br></br>
 <div class="row text-white">
   <div class="col-md-6 text-light">

@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
     
     @id = @group.id
     @cards = Card.where("group_id = ?" , @id)
+    @group_review = GroupReview.new
   end
 
   # GET /groups/new
