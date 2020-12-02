@@ -15,17 +15,19 @@ class CardsController < ApplicationController
   # GET /cards/new
   def new
     @card = Card.new
+    @group = Group.all.map{ |grp| [grp.id] }
   end
 
   # GET /cards/1/edit
   def edit
+    @group = Group.all.map{ |grp| [grp.id] }
   end
 
   # POST /cards
   # POST /cards.json
   def create
     @card = Card.new(card_params)
-
+    @card.group_id = params[:group_id]
     respond_to do |format|
       if @card.save
         format.html { redirect_to @card, notice: 'Card was successfully created.' }
@@ -40,6 +42,7 @@ class CardsController < ApplicationController
   # PATCH/PUT /cards/1
   # PATCH/PUT /cards/1.json
   def update
+    @card.group_id = params[:group_id]
     respond_to do |format|
       if @card.update(card_params)
         format.html { redirect_to @card, notice: 'Card was successfully updated.' }
@@ -69,6 +72,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:front_side, :back_side)
+      params.require(:card).permit(:front_side, :back_side, :group_id)
     end
 end
