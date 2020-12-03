@@ -28,7 +28,6 @@ class CardsController < ApplicationController
   # POST /cards.json
   def create
     @card = Card.new(card_params)
-    @card_review.user_id = current_user.id
     @card.group_id = params[:group_id]
     @card.user_id = current_user.id
     respond_to do |format|

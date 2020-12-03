@@ -16,7 +16,7 @@
         <li class="list-group-item">Eメール：<%= @user.email %></li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Edit</a>
+        <%= link_to 'Edit', edit_user_registration_path %> | <%= link_to "Back", :back %>
       </div>
     </div>
   </div>
