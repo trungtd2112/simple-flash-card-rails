@@ -28,7 +28,7 @@
   
   <div class="field">
     <%= form.label "セット" %>
-    <%= select_tag :group_id, options_for_select(@group.collect{ |g| [g.name, g.id] }), prompt: "Select Set", class: 'form-control' %>
+    <%= select_tag :group_id, options_for_select(@group.collect{ |g| [g.name, g.id] }), class: 'form-control' %>
   </div>
   
 
