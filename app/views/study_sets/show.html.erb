@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @study_set.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @study_set.name %>
+</p>
+
+<%= link_to 'Edit', edit_study_set_path(@study_set) %> |
+<%= link_to 'Back', study_sets_path %>

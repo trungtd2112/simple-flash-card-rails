@@ -31,7 +31,6 @@
     <%= select_tag :group_id, options_for_select(@group.collect{ |g| [g.name, g.id] }), prompt: "Select Set", class: 'form-control' %>
   </div>
   
-
   <div class="actions">
     <p class="btn btn-secondary btn-block"><%= form.submit %></p>
   </div>

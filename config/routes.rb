@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :study_sets
+  resources :card_sets
   resources :group_reviews
   resources :card_reviews
   resources :groups
